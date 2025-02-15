@@ -1,0 +1,15 @@
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+# Exemple de code secret à partager
+secret_code = "🔑📜🌀🧩📐🔮 ➡️ 68747470733a2f2f6c696e6b2e636f6d"
+
+@app.route('/secret', methods=['GET'])
+def get_secret():
+    # Retourne le code secret
+    return jsonify({"message": "Voici le code secret :", "code": secret_code})
+
+if __name__ == '__main__':
+    # Démarre le serveur localement
+    app.run(host='0.0.0.0', port=5000)
